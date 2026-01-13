@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО "Таерлэнд" - Автомобильные шины и диски оптом и в розницу</title>
+    <meta name="description" content="ООО Таерлэнд - официальный дилер шин Cordiant, Gislaved, Torero. Продажа автомобильных шин и дисков оптом и в розницу в Ярославле">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Полный CSS код сайта */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.6; color: #333; background-color: #f8fafc; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(67, 100, 247, 0.25); font-size: 1rem; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(67, 100, 247, 0.35); }
+        .btn-contact { background: white; color: #0052D4; border: 2px solid #0052D4; }
+        .btn-contact:hover { background: #0052D4; color: white; }
+        h2 { font-size: 2.5rem; margin-bottom: 1.2rem; color: #1e3a8a; text-align: center; position: relative; padding-bottom: 15px; }
+        h2:after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(to right, #0052D4, #6FB1FC); border-radius: 2px; }
+        .section-subtitle { text-align: center; color: #4b5563; font-size: 1.15rem; max-width: 800px; margin: 0 auto 50px; line-height: 1.8; }
+        header { background: rgba(255, 255, 255, 0.98); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #0052D4, #6FB1FC); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 700; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-main { font-size: 1.6rem; font-weight: 800; color: #1e3a8a; line-height: 1.1; }
+        .logo-sub { font-size: 0.9rem; color: #4364F7; font-weight: 500; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 40px; }
+        nav ul li a { text-decoration: none; color: #1e3a8a; font-weight: 600; transition: color 0.3s; font-size: 1.05rem; position: relative; }
+        nav ul li a:hover { color: #4364F7; }
+        nav ul li a:after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #4364F7; transition: width 0.3s; }
+        nav ul li a:hover:after { width: 100%; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #1e3a8a; }
+        .hero { background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(67, 100, 247, 0.8)), url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; background-attachment: fixed; text-align: center; padding: 180px 0 120px; margin-top: 80px; color: white; }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 25px; color: white; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.95; line-height: 1.7; }
+        .hero-cta { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-img { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15); }
+        .about-img img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+        .about-img:hover img { transform: scale(1.03); }
+        .about-text p { margin-bottom: 25px; font-size: 1.1rem; color: #4b5563; line-height: 1.8; }
+        .directions { background-color: #f0f7ff; }
+        .directions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
+        .direction-card { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 82, 212, 0.08); text-align: center; transition: all 0.3s; border-top: 4px solid transparent; }
+        .direction-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0, 82, 212, 0.15); border-top: 4px solid #4364F7; }
+        .direction-icon { font-size: 2.8rem; color: #0052D4; margin-bottom: 25px; }
+        .direction-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: #1e3a8a; }
+        .partners-carousel-section { position: relative; overflow: hidden; padding: 80px 0; }
+        .partners-carousel-container { position: relative; max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+        .carousel-wrapper { overflow: hidden; position: relative; }
+        .carousel-track { display: flex; transition: transform 0.5s ease; gap: 30px; }
+        .partner-card { flex: 0 0 calc(33.333% - 20px); min-width: 300px; background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .partner-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 82, 212, 0.15); }
+        .partner-logo { height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; width: 100%; }
+        .partner-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .partner-card h4 { margin-top: 15px; color: #1e3a8a; font-size: 1.3rem; font-weight: 600; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #1e3a8a; transition: all 0.3s; z-index: 10; }
+        .carousel-btn:hover { background: #4364F7; color: white; transform: translateY(-50%) scale(1.1); }
+        .carousel-btn.prev { left: 0; }
+        .carousel-btn.next { right: 0; }
+        .carousel-dots { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
+        .carousel-dot { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e1; border: none; cursor: pointer; transition: all 0.3s; }
+        .carousel-dot.active { background: #4364F7; transform: scale(1.3); }
+        .contacts { background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .contact-department { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 82, 212, 0.08); transition: transform 0.3s; }
+        .contact-department:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 82, 212, 0.15); }
+        .department-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #f0f7ff; }
+        .department-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #0052D4, #4364F7); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; color: white; font-size: 1.5rem; }
+        .department-title h3 { color: #1e3a8a; margin-bottom: 5px; font-size: 1.4rem; }
+        .department-title p { color: #6b7280; font-size: 0.95rem; }
+        .contact-person { margin-bottom: 20px; padding: 15px; background: #f8fafc; border-radius: 8px; }
+        .contact-person h4 { color: #1e3a8a; margin-bottom: 8px; font-size: 1.1rem; }
+        .contact-info-item { display: flex; align-items: center; margin-bottom: 10px; color: #4b5563; }
+        .contact-info-item i { width: 24px; color: #4364F7; margin-right: 10px; text-align: center; }
+        .contact-info-item a { color: #4364F7; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .contact-info-item a:hover { color: #0052D4; text-decoration: underline; }
+        .direct-contact-buttons { display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+        .contact-note { background: #f0f7ff; padding: 25px; border-radius: 12px; margin-top: 40px; text-align: center; border-left: 4px solid #4364F7; }
+        .contact-note p { color: #1e3a8a; font-size: 1.1rem; margin-bottom: 15px; }
+        footer { background: #1e3a8a; color: #e0f2fe; padding: 60px 0 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-logo { font-size: 2rem; font-weight: 800; color: white; margin-bottom: 20px; }
+        .footer-about p { margin-bottom: 20px; opacity: 0.9; }
+        .social-icons { display: flex; gap: 20px; margin-top: 20px; }
+        .social-icons a { color: white; font-size: 1.3rem; transition: color 0.3s; background: rgba(255, 255, 255, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .social-icons a:hover { background: rgba(255, 255, 255, 0.2); color: #6FB1FC; }
+        .footer-links h4, .footer-contacts h4 { color: white; margin-bottom: 25px; font-size: 1.3rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links ul li { margin-bottom: 12px; }
+        .footer-links ul li a { color: #e0f2fe; text-decoration: none; transition: color 0.3s; }
+        .footer-links ul li a:hover { color: #6FB1FC; padding-left: 5px; }
+        .footer-contacts p { margin-bottom: 10px; display: flex; align-items: flex-start; }
+        .footer-contacts i { margin-right: 10px; color: #6FB1FC; margin-top: 3px; }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #93c5fd; font-size: 0.9rem; }
+        @media (max-width: 992px) { .about-content { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } h2 { font-size: 2.2rem; } .partner-card { flex: 0 0 calc(50% - 15px); min-width: 250px; } .contact-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 20px 0; z-index: 999; } nav ul.active { display: flex; } nav ul li { margin: 15px 0; text-align: center; margin-left: 0; } .menu-toggle { display: block; } .hero h1 { font-size: 2rem; } h2 { font-size: 1.8rem; } .hero-cta { flex-direction: column; align-items: center; } .btn { width: 100%; max-width: 300px; text-align: center; } .partners-carousel-container { padding: 0 40px; } .partner-card { flex: 0 0 calc(100% - 20px); min-width: 280px; } .direct-contact-buttons { flex-direction: column; } }
+        @media (max-width: 480px) { .partners-carousel-container { padding: 0 20px; } .carousel-btn { width: 40px; height: 40px; } .contact-department { padding: 25px 20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">Т</div>
+                <div class="logo-text">
+                    <div class="logo-main">ООО "Таерлэнд"</div>
+                    <div class="logo-sub">Автомобильные шины и диски</div>
+                </div>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#directions">Направления</a></li>
+                    <li><a href="#partners">Партнеры</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Официальный дилер ведущих производителей шин</h1>
+            <p>ООО "Таерлэнд" — надежный поставщик автомобильных шин и дисков в Ярославле и по всей России. Крупный опт, розничные магазины и интернет-продажи.</p>
+            <div class="hero-cta">
+                <a href="#contacts" class="btn">Связаться с нами</a>
+                <a href="#directions" class="btn" style="background: white; color: #0052D4;">Наши направления</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>О компании</h2>
+            <p class="section-subtitle">ООО "Таерлэнд" — динамично развивающаяся компания на рынке автомобильных шин и дисков с широкой географией поставок и разнообразными каналами продаж.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Базируемся в Ярославле, но работаем по всей России. Наша миссия — обеспечить клиентов качественной шинной продукцией по конкурентным ценам, предлагая гибкие условия сотрудничества для оптовых и розничных покупателей.</p>
+                    <p>Мы строим долгосрочные партнерские отношения, основанные на взаимовыгодном сотрудничестве, прозрачности и высоком уровне сервиса. Наша команда профессионалов всегда готова предложить оптимальное решение для вашего бизнеса.</p>
+                    <a href="#contacts" class="btn" style="margin-top: 20px;">Получить контакты</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Шины на современном складе">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="directions" id="directions">
+        <div class="container">
+            <h2>Направления продаж</h2>
+            <p class="section-subtitle">Мы предлагаем гибкие условия поставок для различных форматов бизнеса</p>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Крупный опт</h3>
+                    <p>Отправка контейнеров с заводов производителей напрямую покупателям, минуя наш склад. Максимально выгодные цены для крупных партий.</p>
+                </div>
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Опт со склада</h3>
+                    <p>Поставки с собственных складов в Ярославле. Широкий ассортимент в наличии, быстрая отгрузка, индивидуальные условия для партнеров.</p>
+                </div>
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Розничные магазины</h3>
+                    <p>Сеть магазинов "Шинный Ангар": два магазина в Ярославле и магазин в Королеве. Качественный сервис и профессиональные консультации.</p>
+                </div>
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Интернет-продажи</h3>
+                    <p>Онлайн-магазин <strong>шинныйангар.рф</strong> и магазины на маркетплейсах Яндекс.Маркет и Ozon. Удобный заказ и доставка по всей России.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-carousel-section" id="partners">
+        <div class="container">
+            <h2>Наши партнеры</h2>
+            <p class="section-subtitle">Мы являемся официальными дилерами ведущих производителей шинной продукции</p>
+            
+            <div class="partners-carousel-container">
+                <button class="carousel-btn prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack"></div>
+                </div>
+                
+                <button class="carousel-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+            
+            <p class="section-subtitle" style="margin-top: 60px;">В нашем ассортименте представлены большинство популярных брендов по самым доступным ценам!</p>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p class="section-subtitle">Свяжитесь с нужным отделом для решения ваших задач</p>
+            
+            <div class="contact-grid">
+                <div class="contact-department">
+                    <div class="department-header">
+                        <div class="department-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="department-title">
+                            <h3>Оптовый отдел</h3>
+                            <p>Продажи крупным и средним оптом</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-person">
+                        <h4>Горелов Иван</h4>
+                        <p class="department-role">Начальник отдела</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79011707205">+7 (901) 170-72-05</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sale@tireland.ru">sale@tireland.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-person">
+                        <h4>Исакова Юлия</h4>
+                        <p class="department-role">Менеджер</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79921033550">+7 (992) 103-35-50</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sale@tireland.ru">sale@tireland.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="direct-contact-buttons">
+                        <a href="tel:+79011707205" class="btn">
+                            <i class="fas fa-phone"></i> Позвонить
+                        </a>
+                        <a href="mailto:sale@tireland.ru" class="btn btn-contact">
+                            <i class="fas fa-envelope"></i> Написать
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-department">
+                    <div class="department-header">
+                        <div class="department-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="department-title">
+                            <h3>Отдел закупок</h3>
+                            <p>Работа с поставщиками и производителями</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-person">
+                        <h4>Перевозчикова Ольга</h4>
+                        <p class="department-role">Начальник отдела</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79010518050">+7 (901) 051-80-50</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:order@tireland.ru">order@tireland.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="direct-contact-buttons">
+                        <a href="tel:+79010518050" class="btn">
+                            <i class="fas fa-phone"></i> Позвонить
+                        </a>
+                        <a href="mailto:order@tireland.ru" class="btn btn-contact">
+                            <i class="fas fa-envelope"></i> Написать
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-department">
+                    <div class="department-header">
+                        <div class="department-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="department-title">
+                            <h3>Руководство</h3>
+                            <p>Генеральный директор</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-person">
+                        <h4>Вострилов Андрей</h4>
+                        <p class="department-role">Генеральный директор</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:v@tireland.ru">v@tireland.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="direct-contact-buttons">
+                        <a href="mailto:v@tireland.ru" class="btn">
+                            <i class="fas fa-envelope"></i> Написать директору
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-note">
+                <p><i class="fas fa-info-circle" style="color: #4364F7; margin-right: 10px;"></i> 
+                <strong>Рабочее время:</strong> Пн-Пт с 9:00 до 18:00, Сб с 10:00 до 16:00</p>
+                <p>Для оперативной связи рекомендуем звонить по указанным телефонам.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">ООО "Таерлэнд"</div>
+                    <p>Надежный поставщик автомобильных шин и дисков в Ярославле и по всей России. Официальный дилер ведущих производителей.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Направления</h4>
+                    <ul>
+                        <li><a href="#directions">Крупный опт</a></li>
+                        <li><a href="#directions">Опт со склада</a></li>
+                        <li><a href="#directions">Розничные магазины</a></li>
+                        <li><a href="#directions">Интернет-продажи</a></li>
+                        <li><a href="#partners">Бренды</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h4>Реквизиты и адреса</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 150510, Ярославская обл., Ярославский р-н, д. Кузнечиха, ул. Промышленная 3</p>
+                    <p><i class="fas fa-id-card"></i> ИНН 7611027030 / КПП 762701001</p>
+                    <p><i class="fas fa-file-contract"></i> ОГРН 1197627015926</p>
+                    <p><i class="fas fa-globe"></i> <a href="https://шинныйангар.рф" style="color: #93c5fd;">шинныйангар.рф</a></p>
+                    <p><i class="fas fa-city"></i> г. Ярославль</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ООО "Таерлэнд". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Фиксированная шапка
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            }
+        });
+
+        // Карусель партнеров
+        const partners = [
+            { name: "Cordiant", logo: "https://cordiant.ru/local/templates/cordiant_2023/images/logo_w_new.svg", description: "АО 'Кордиант'" },
+            { name: "Gislaved", logo: "https://gislaved-tire.ru/images/svg/gis_logo.svg", description: "АО 'Кордиант'" },
+            { name: "Torero", logo: "https://torero-tire.su/assets/img/svg/logo/torero/torero-topline.svg", description: "АО 'Кордиант'" },
+            { name: "Tunga", logo: "https://www.port3.ru/images/man-logos/tunga.jpg", description: "АО 'Кордиант'" },
+            { name: "Dynamo", logo: "https://ir.ozone.ru/s3/multimedia-1-a/w1200/7432175026.jpg", description: "Sailun Group" },
+            { name: "Roadx", logo: "https://euro-shini.ru/upload/cssinliner_webp/iblock/b87/lehdp0wal50j978yllqdo4esczh9w4zw.webp", description: "Sailun Group" },
+            { name: "Joyroad", logo: "https://shinline.kz/upload/ammina.optimizer/png-webp/q80/upload/iblock/628/628ab39abc0092811e2b46e5527047ef.webp", description: "Zhongyi Rubber Co." }
+        ];
+
+        let currentSlide = 0;
+        let slidesToShow = 3;
+        const carouselTrack = document.getElementById('carouselTrack');
+        const carouselDots = document.getElementById('carouselDots');
+
+        function updateSlidesToShow() {
+            if (window.innerWidth <= 768) slidesToShow = 1;
+            else if (window.innerWidth <= 992) slidesToShow = 2;
+            else slidesToShow = 3;
+            updateCarousel();
+        }
+
+        function createPartnerCards() {
+            carouselTrack.innerHTML = '';
+            partners.forEach(partner => {
+                const card = document.createElement('div');
+                card.className = 'partner-card';
+                card.innerHTML = `
+                    <div class="partner-logo">
+                        <img src="${partner.logo}" alt="${partner.name}" loading="lazy">
+                    </div>
+                    <h4>${partner.name}</h4>
+                    <p>${partner.description}</p>
+                `;
+                carouselTrack.appendChild(card);
+            });
+        }
+
+        function createDots() {
+            carouselDots.innerHTML = '';
+            const dotsCount = Math.ceil(partners.length / slidesToShow);
+            for (let i = 0; i < dotsCount; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                carouselDots.appendChild(dot);
+            }
+        }
+
+        function updateCarousel() {
+            const cardWidth = document.querySelector('.partner-card')?.offsetWidth + 30 || 330;
+            const translateX = -currentSlide * cardWidth * slidesToShow;
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            createDots();
+        }
+
+        function goToSlide(slideIndex) {
+            const maxSlide = Math.ceil(partners.length / slidesToShow) - 1;
+            currentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            const maxSlide = Math.ceil(partners.length / slidesToShow) - 1;
+            currentSlide = currentSlide < maxSlide ? currentSlide + 1 : 0;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            const maxSlide = Math.ceil(partners.length / slidesToShow) - 1;
+            currentSlide = currentSlide > 0 ? currentSlide - 1 : maxSlide;
+            updateCarousel();
+        }
+
+        function initCarousel() {
+            createPartnerCards();
+            updateSlidesToShow();
+            document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
+            document.querySelector('.carousel-btn.prev').addEventListener('click', prevSlide);
+            setInterval(nextSlide, 5000);
+            window.addEventListener('resize', updateSlidesToShow);
+        }
+
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    </script>
+</body>
+</html>
