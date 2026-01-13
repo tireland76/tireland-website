@@ -416,8 +416,9 @@
         });
 
         // Карусель партнеров
+        // Карусель партнеров
         const partners = [
-            { name: "Cordiant", logo: "https://cordiant-tyre.ru/upload/resize_cache/webp/iblock/225/jfx4cuykm1b3zy18toq177jrp0018c8p/logo_news.webp", description: "АО 'Кордиант'" },
+            { name: "Cordiant", logo: "https://cordiant.ru/local/templates/cordiant_2023/images/logo_w_new.svg", description: "АО 'Кордиант'" },
             { name: "Gislaved", logo: "https://gislaved-tire.ru/images/svg/gis_logo.svg", description: "АО 'Кордиант'" },
             { name: "Torero", logo: "https://torero-tire.su/assets/img/svg/logo/torero/torero-topline.svg", description: "АО 'Кордиант'" },
             { name: "Tunga", logo: "https://www.port3.ru/images/man-logos/tunga.jpg", description: "АО 'Кордиант'" },
@@ -427,13 +428,12 @@
         ];
 
         let currentSlide = 0;
-        let slidesToShow = 3;
+        let slidesToShow = 1; // Всегда 1 слайд
         const carouselTrack = document.getElementById('carouselTrack');
         const carouselDots = document.getElementById('carouselDots');
 
         function updateSlidesToShow() {
-            if (window.innerWidth <= 768) slidesToShow = 1;
-            else slidesToShow = 1; // Всегда показываем 1 слайд
+            slidesToShow = 1; // Всегда показываем 1 бренд
             updateCarousel();
         }
 
@@ -455,8 +455,8 @@
 
         function createDots() {
             carouselDots.innerHTML = '';
-            const dotsCount = partners.length;
-            for (let i = 0; i < dotsCount; i++) {
+            // Количество точек = количество брендов
+            for (let i = 0; i < partners.length; i++) {
                 const dot = document.createElement('button');
                 dot.className = 'carousel-dot';
                 if (i === currentSlide) dot.classList.add('active');
@@ -466,8 +466,9 @@
         }
 
         function updateCarousel() {
-            cconst cardWidth = document.querySelector('.partner-card')?.offsetWidth + 30 || 330;
-            const translateX = -currentSlide * cardWidth; // Убрали умножение на slidesToShow
+            const cardWidth = document.querySelector('.partner-card')?.offsetWidth + 30 || 330;
+            // Прокручиваем на ширину одного слайда
+            const translateX = -currentSlide * cardWidth;
             carouselTrack.style.transform = `translateX(${translateX}px)`;
             document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
@@ -476,19 +477,20 @@
         }
 
         function goToSlide(slideIndex) {
-            const maxSlide = partners.length - 1; // Убрали деление на slidesToShow
+            // Максимальный слайд = количество брендов - 1
+            const maxSlide = partners.length - 1;
             currentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
             updateCarousel();
         }
 
         function nextSlide() {
-            const maxSlide = partners.length - 1; // Убрали деление на slidesToShow
+            const maxSlide = partners.length - 1;
             currentSlide = currentSlide < maxSlide ? currentSlide + 1 : 0;
             updateCarousel();
         }
 
         function prevSlide() {
-            const maxSlide = partners.length - 1; // Убрали деление на slidesToShow
+            const maxSlide = partners.length - 1;
             currentSlide = currentSlide > 0 ? currentSlide - 1 : maxSlide;
             updateCarousel();
         }
@@ -498,11 +500,11 @@
             updateSlidesToShow();
             document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
             document.querySelector('.carousel-btn.prev').addEventListener('click', prevSlide);
-            setInterval(nextSlide, 5000);
+            setInterval(nextSlide, 5000); // Автоматическая прокрутка каждые 5 секунд
             window.addEventListener('resize', updateSlidesToShow);
         }
 
         document.addEventListener('DOMContentLoaded', initCarousel);
-    </script>
+      </script>
 </body>
 </html>
